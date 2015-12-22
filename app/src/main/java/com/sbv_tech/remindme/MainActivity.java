@@ -19,4 +19,5 @@ public class MainActivity extends Activity {
         super.onStart();
         System.out.println("Activity started");
     }
+
 }
