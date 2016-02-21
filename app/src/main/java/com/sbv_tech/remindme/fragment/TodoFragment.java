@@ -1,8 +1,8 @@
 package com.sbv_tech.remindme.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +12,18 @@ import com.sbv_tech.remindme.R;
 /**
  * Created by sergey.bondarenok on 2/21/16.
  */
-public class ExampleFragment extends Fragment{
+public class TodoFragment extends AbstructTabFragment{
     private static final int LAYOUT = R.layout.fragment_example;
-    private View view;
+//    private String title;
+//    private Context context;
+//    private View view;
 
-    public static ExampleFragment getInstance(){
+    public static TodoFragment getInstance(Context context){
         Bundle args = new Bundle();
-        ExampleFragment fragment = new ExampleFragment();
+        TodoFragment fragment = new TodoFragment();
+        fragment.setContext(context);
         fragment.setArguments(args);
+        fragment.setTitle(context.getString(R.string.tab_item_todo));
         return fragment;
     }
 
@@ -30,4 +34,16 @@ public class ExampleFragment extends Fragment{
         return view;
 //        return super.onCreateView(inflater, container, savedInstanceState);
     }
+
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+//    public String getTitle() {
+//        return title;
+//    }
 }
